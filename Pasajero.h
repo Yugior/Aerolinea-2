@@ -1,16 +1,16 @@
 #ifndef PASAJERO_H
 #define PASAJERO_H
 
-#include <string>
 #include "Asiento.h"
+#include <string>
 
 using namespace std;
 
 class Pasajero {
 public:
     Pasajero();
-    void setNombre(const std::string& nombre);
-    void setTelefono(const std::string& telefono);
+    void setNombre(const string& nombre);
+    void setTelefono(const string& telefono);
     void registrarPasajero(bool esTrabajo);
     Asiento* getAsiento() const;
 
@@ -20,4 +20,4 @@ private:
     Asiento* asiento;
 };
 
-#endif
+#endif // PASAJERO_H
