@@ -4,12 +4,10 @@
 #include "Pasajero.h"
 #include "Trabajo.h"
 #include "Premier.h"
-#include "Vuelo.h"
-#include "Aerolinea.h"
 
 using namespace std;
 
-// Función para mostrar una lista y permitir al usuario seleccionar una opción
+// Lista
 template <typename T>
 T seleccionarOpcion(const vector<T>& opciones, const string& mensaje) {
     cout << mensaje << endl;
@@ -22,7 +20,7 @@ T seleccionarOpcion(const vector<T>& opciones, const string& mensaje) {
 }
 
 int main() {
-    // Listas de opciones
+    // Opciones de las listas
     vector<string> aerolineas = {"Aerolinea 1", "Aerolinea 2", "Aerolinea 3"};
     vector<string> vuelos = {"Vuelo 1", "Vuelo 2", "Vuelo 3"};
     vector<string> fechas = {"01/01/2024", "02/01/2024", "03/01/2024"};
@@ -30,23 +28,23 @@ int main() {
     vector<string> tiposAsiento = {"Trabajo", "Premier"};
     vector<string> tiposServicios = {"Comida", "Bebidas", "Entretenimiento"};
 
-    // Costos de los asientos
+    // Costos
     double costoTrabajo = 500.0;
     double costoPremier = 1500.0;
-    // Costos de los servicios
+    // Costos del servicio
     double costoServicioComida = 50.0;
     double costoServicioBebidas = 30.0;
     double costoServicioEntretenimiento = 40.0;
 
-    // Pedir nombre y teléfono del pasajero
+    // Datos del Pasajero
     string nombre, telefono;
     cout << "Ingrese el nombre del pasajero: ";
-    cin.ignore(); // Ignorar el salto de línea pendiente
+    cin.ignore(); // Ignore the pending newline
     getline(cin, nombre);
     cout << "Ingrese el teléfono del pasajero: ";
     getline(cin, telefono);
 
-    // Selección de opciones
+    // Elegir opciones
     string aerolineaSeleccionada = seleccionarOpcion(aerolineas, "Seleccione una aerolínea:");
     string vueloSeleccionado = seleccionarOpcion(vuelos, "Seleccione un vuelo:");
     string fechaSeleccionada = seleccionarOpcion(fechas, "Seleccione una fecha:");
@@ -86,7 +84,7 @@ int main() {
     }
     cout << endl;
 
-    // Crear pasajero y registrar con el tipo de asiento seleccionado
+    //Crear al pasajero y ubicarlo en un asiento
     Pasajero pasajero;
     pasajero.setNombre(nombre);
     pasajero.setTelefono(telefono);
@@ -100,13 +98,13 @@ int main() {
         costoAsiento = costoPremier;
     }
 
-    // Calcular costo total
+    // Calcular el costo total
     double costoTotal = costoAsiento + costoTotalServicios;
 
-    // Mostrar el costo total
+    // Mostrar el costo final
     cout << "Costo total del asiento y servicios: $" << costoTotal << endl;
 
-    // Obtener el asiento del pasajero y mostrar los detalles del asiento
+    // Datos del asiento y mostrar sus detalles
     Asiento* asiento = pasajero.getAsiento();
     if (Trabajo* trabajo = dynamic_cast<Trabajo*>(asiento)) {
         cout << "Asiento de Trabajo - Bebidas: " << trabajo->getBebidas() << endl;
@@ -115,6 +113,9 @@ int main() {
         cout << "Asiento Premier - Masaje: " << premier->getMasaje() << endl;
         cout << "Asiento Premier - Comida: " << premier->getComida() << endl;
     }
+
+    // Limpiar
+    delete asiento;
 
     return 0;
 }
