@@ -21,5 +21,5 @@ void Premier::setComida(const string& nuevaComida) {
 }
 
 void Premier::elegirAsiento(double costo) {
-    // Implementar lógica específica para elegir asiento premier
+   
 }
