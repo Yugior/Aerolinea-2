@@ -2,8 +2,6 @@
 #include "Trabajo.h"
 #include "Premier.h"
 
-using namespace std;
-
 Pasajero::Pasajero() : asiento(nullptr) {}
 
 void Pasajero::setNombre(const string& nombre) {
