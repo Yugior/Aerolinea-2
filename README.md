@@ -10,10 +10,15 @@ Se espera que el programa guardey registre los vuelos apartados.
 
 ## Casos de error
 
-Puede llegar a fallar si no se descargan todos los archivos y se ejecuta correctamente
-Puede marcar errores si se elgie una opción que no aparesca al elegir durante el programa
-Puede fallar en caso de no responder la pregunta solicitada
-Suele fallar si no estan los archivos juntos en un mismo destino (Sugiero crear una carpeta y guardarlos en el mismo)
+Puede llegar a fallar si no se descargan todos los archivos y se ejecuta correctamente.
+
+Puede marcar errores si se elgie una opción que no aparesca al elegir durante el programa.
+
+Puede fallar en caso de no responder la pregunta solicitada.
+
+Suele fallar si no estan los archivos juntos en un mismo destino (Sugiero crear una carpeta y guardarlos en el mismo).
+
+Checar si el sistema que lo compila es el indicado(sugerencia).
 
 
 ## Primer proyecto
