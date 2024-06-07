@@ -1,23 +1,31 @@
-#ifndef PREMIER_H
-#define PREMIER_H
-
-#include "Asiento.h"
-#include <string>
+#include "Premier.h"
 
 using namespace std;
 
-class Premier : public Asiento {
-public:
-    Premier();
-    string getMasaje() const;
-    void setMasaje(const string& masaje);
-    string getComida() const;
-    void setComida(const string& comida);
-    void elegirAsiento(double costo) override;
+// Constructor por defecto
+Premier::Premier() : masaje(""), comida("") {}
 
-private:
-    string masaje;
-    string comida;
-};
+// Obtiene el masaje disponible en el asiento premier
+string Premier::getMasaje() const {
+    return masaje;
+}
 
-#endif
+// Establece el masaje disponible en el asiento premier
+void Premier::setMasaje(const string& nuevoMasaje) {
+    masaje = nuevoMasaje;
+}
+
+// Obtiene la comida disponible en el asiento premier
+string Premier::getComida() const {
+    return comida;
+}
+
+// Establece la comida disponible en el asiento premier
+void Premier::setComida(const string& nuevaComida) {
+    comida = nuevaComida;
+}
+
+//No hay una implementación necesaria por lo que queda vaica
+void Premier::elegirAsiento(double costo) {
+    
+}
