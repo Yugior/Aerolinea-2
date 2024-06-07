@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// Lista
+// Función para mostrar una lista y permitir que el usuario seleccione una opción
 template <typename T>
 T seleccionarOpcion(const vector<T>& opciones, const string& mensaje) {
     cout << mensaje << endl;
@@ -20,7 +20,7 @@ T seleccionarOpcion(const vector<T>& opciones, const string& mensaje) {
 }
 
 int main() {
-    // Opciones de las listas
+    // Listas de opciones
     vector<string> aerolineas = {"Aerolinea 1", "Aerolinea 2", "Aerolinea 3"};
     vector<string> vuelos = {"Vuelo 1", "Vuelo 2", "Vuelo 3"};
     vector<string> fechas = {"01/01/2024", "02/01/2024", "03/01/2024"};
@@ -28,23 +28,23 @@ int main() {
     vector<string> tiposAsiento = {"Trabajo", "Premier"};
     vector<string> tiposServicios = {"Comida", "Bebidas", "Entretenimiento"};
 
-    // Costos
+    // Costos de asientos
     double costoTrabajo = 500.0;
     double costoPremier = 1500.0;
-    // Costos del servicio
+    // Costos de servicios
     double costoServicioComida = 50.0;
     double costoServicioBebidas = 30.0;
     double costoServicioEntretenimiento = 40.0;
 
-    // Datos del Pasajero
+    // Solicitar el nombre y el teléfono del pasajero
     string nombre, telefono;
     cout << "Ingrese el nombre del pasajero: ";
-    cin.ignore(); // Ignore the pending newline
+    cin.ignore(); // Ignorar el salto de línea pendiente
     getline(cin, nombre);
     cout << "Ingrese el teléfono del pasajero: ";
     getline(cin, telefono);
 
-    // Elegir opciones
+    // Selección de opciones
     string aerolineaSeleccionada = seleccionarOpcion(aerolineas, "Seleccione una aerolínea:");
     string vueloSeleccionado = seleccionarOpcion(vuelos, "Seleccione un vuelo:");
     string fechaSeleccionada = seleccionarOpcion(fechas, "Seleccione una fecha:");
@@ -84,7 +84,7 @@ int main() {
     }
     cout << endl;
 
-    //Crear al pasajero y ubicarlo en un asiento
+    // Crear pasajero y registrar con el tipo de asiento seleccionado
     Pasajero pasajero;
     pasajero.setNombre(nombre);
     pasajero.setTelefono(telefono);
@@ -98,13 +98,13 @@ int main() {
         costoAsiento = costoPremier;
     }
 
-    // Calcular el costo total
+    // Calcular costo total
     double costoTotal = costoAsiento + costoTotalServicios;
 
-    // Mostrar el costo final
+    // Mostrar costo total
     cout << "Costo total del asiento y servicios: $" << costoTotal << endl;
 
-    // Datos del asiento y mostrar sus detalles
+    // Obtener el asiento del pasajero y mostrar detalles del asiento
     Asiento* asiento = pasajero.getAsiento();
     if (Trabajo* trabajo = dynamic_cast<Trabajo*>(asiento)) {
         cout << "Asiento de Trabajo - Bebidas: " << trabajo->getBebidas() << endl;
