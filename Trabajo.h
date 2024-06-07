@@ -6,13 +6,14 @@
 
 using namespace std;
 
+// Clase derivada de Asiento para asientos de trabajo
 class Trabajo : public Asiento {
 public:
     Trabajo();
     string getBebidas() const;
-    void setBebidas(const string& bebidas);
+    void setBebidas(const string& nuevasBebidas);
     string getEntretenimiento() const;
-    void setEntretenimiento(const string& entretenimiento);
+    void setEntretenimiento(const string& nuevoEntretenimiento);
     void elegirAsiento(double costo) override;
 
 private:
@@ -20,4 +21,5 @@ private:
     string entretenimiento;
 };
 
-#endif
+#endif // TRABAJO_H
+
