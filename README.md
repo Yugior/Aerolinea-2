@@ -6,7 +6,7 @@ Esta versión nueva del proyecto se centra en la solicitud de un aeropuerto con 
 
 El programa pretende contener un registro para apartar un asiento.
 
-Se espera que el programa guardey registre los vuelos apartados.
+Se espera que el programa guarde y registre los vuelos apartados.
 
 ## Casos de error
 
