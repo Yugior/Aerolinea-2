@@ -1,31 +1,31 @@
-#include "Premier.h"
+#include "Trabajo.h"
 
 using namespace std;
 
 // Constructor por defecto
-Premier::Premier() : masaje(""), comida("") {}
+Trabajo::Trabajo() : bebidas(""), entretenimiento("") {}
 
-// Obtiene el masaje disponible en el asiento premier
-string Premier::getMasaje() const {
-    return masaje;
+// Obtiene las bebidas disponibles en el asiento de trabajo
+string Trabajo::getBebidas() const {
+    return bebidas;
 }
 
-// Establece el masaje disponible en el asiento premier
-void Premier::setMasaje(const string& nuevoMasaje) {
-    masaje = nuevoMasaje;
+// Establece las bebidas disponibles en el asiento de trabajo
+void Trabajo::setBebidas(const string& nuevasBebidas) {
+    bebidas = nuevasBebidas;
 }
 
-// Obtiene la comida disponible en el asiento premier
-string Premier::getComida() const {
-    return comida;
+// Obtiene el entretenimiento disponible en el asiento de trabajo
+string Trabajo::getEntretenimiento() const {
+    return entretenimiento;
 }
 
-// Establece la comida disponible en el asiento premier
-void Premier::setComida(const string& nuevaComida) {
-    comida = nuevaComida;
+// Establece el entretenimiento disponible en el asiento de trabajo
+void Trabajo::setEntretenimiento(const string& nuevoEntretenimiento) {
+    entretenimiento = nuevoEntretenimiento;
 }
 
-//No hay una implementación necesaria por lo que queda vaica
-void Premier::elegirAsiento(double costo) {
+// No hay una implementación necesaria por lo que queda vaica
+void Trabajo::elegirAsiento(double costo) {
     
 }
